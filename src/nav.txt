@@ -1,0 +1,44 @@
+navItems: [
+        { text: 'Home', link: '/' },
+        { text: '数据结构', link: '/data-structures' },
+        { text: 'VUE开发', link: '/vue-development' },
+        { text: 'Java', link: '/java' },
+        { text: 'C++', link: '/c-plus-plus' },
+        { text: 'HTML', link: '/html' },
+        // 其他项目
+      ],
+
+      {
+    "questions": [
+        {
+            "id": 1,
+            "text": "What is the capital of France?",
+            "type": "multiple-choice",
+            "options": [
+                "Berlin",
+                "London",
+                "Paris",
+                "Madrid"
+            ],
+            "correctAnswer": "Paris"
+        },
+        {
+            "id": 2,
+            "text": "以下哪个属性是对元素的外边距进行控制?",
+            "type": "multiple-choice",
+            "options": [
+                "margin",
+                "padding",
+                "text-align",
+                "line-height"
+            ],
+            "correctAnswer": "margin"
+        },
+        {
+            "id": 3,
+            "text": "Vue 是一种前端开发框架，用于构建用户界面和单页应用程序。",
+            "type": "true-false",
+            "correctAnswer": "true"
+        }
+    ]
+}

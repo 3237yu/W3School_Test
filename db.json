@@ -1,0 +1,103 @@
+{
+    "topics": [
+        {
+            "id": "html",
+            "name": "HTML"
+        },
+        {
+            "id": "css",
+            "name": "CSS"
+        },
+        {
+            "id": "javascript",
+            "name": "JavaScript"
+        }
+    ],
+    "chapters": [
+        {
+            "id": 1,
+            "topicId": "html",
+            "name": "Introduction"
+        },
+        {
+            "id": 2,
+            "topicId": "html",
+            "name": "Basics"
+        },
+        {
+            "id": 3,
+            "topicId": "css",
+            "name": "Introduction"
+        },
+        {
+            "id": 4,
+            "topicId": "css",
+            "name": "Selectors"
+        },
+        {
+            "id": 5,
+            "topicId": "javascript",
+            "name": "Introduction"
+        },
+        {
+            "id": 6,
+            "topicId": "javascript",
+            "name": "Functions"
+        }
+    ],
+    "questions": [
+        {
+            "id": 1,
+            "chapterId": 1,
+            "type": "multiple-choice",
+            "text": "What does HTML stand for?",
+            "options": [
+                "Hyper Text Markup Language",
+                "Home Tool Markup Language"
+            ],
+            "correctAnswer": "Hyper Text Markup Language"
+        },
+        {
+            "id": 2,
+            "chapterId": 1,
+            "type": "true-false",
+            "text": "HTML is a programming language.",
+            "correctAnswer": "false"
+        },
+        {
+            "id": 3,
+            "chapterId": 2,
+            "type": "multiple-choice",
+            "text": "What is the correct HTML element for the largest heading?",
+            "options": [
+                "<h1>",
+                "<heading>",
+                "<h6>"
+            ],
+            "correctAnswer": "<h1>"
+        },
+        {
+            "id": 4,
+            "chapterId": 3,
+            "type": "multiple-choice",
+            "text": "What does CSS stand for?",
+            "options": [
+                "Cascading Style Sheets",
+                "Creative Style Sheets"
+            ],
+            "correctAnswer": "Cascading Style Sheets"
+        },
+        {
+            "id": 5,
+            "chapterId": 5,
+            "type": "multiple-choice",
+            "text": "Inside which HTML element do we put the JavaScript?",
+            "options": [
+                "<script>",
+                "<javascript>",
+                "<js>"
+            ],
+            "correctAnswer": "<script>"
+        }
+    ]
+}
