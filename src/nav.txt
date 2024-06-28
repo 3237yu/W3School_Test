@@ -1,44 +1,743 @@
-navItems: [
-        { text: 'Home', link: '/' },
-        { text: '数据结构', link: '/data-structures' },
-        { text: 'VUE开发', link: '/vue-development' },
-        { text: 'Java', link: '/java' },
-        { text: 'C++', link: '/c-plus-plus' },
-        { text: 'HTML', link: '/html' },
-        // 其他项目
-      ],
-
-      {
+{
+    "topics": [
+        {
+            "id": "html",
+            "name": "HTML"
+        },
+        {
+            "id": "css",
+            "name": "CSS"
+        },
+        {
+            "id": "javascript",
+            "name": "JavaScript"
+        },
+        {
+            "id": "vue",
+            "name": "Vue"
+        },
+        {
+            "id": "cpp",
+            "name": "C++"
+        },
+        {
+            "id": "java",
+            "name": "Java"
+        },
+        {
+            "id": "ds",
+            "name": "数据结构"
+        }
+    ],
+    "chapters": [
+        {
+            "id": "introduction",
+            "topicId": "html",
+            "name": "介绍"
+        },
+        {
+            "id": "elements",
+            "topicId": "html",
+            "name": "元素"
+        },
+        {
+            "id": "forms",
+            "topicId": "html",
+            "name": "表单"
+        },
+        {
+            "id": "tables",
+            "topicId": "html",
+            "name": "表格"
+        },
+        {
+            "id": "semantics",
+            "topicId": "html",
+            "name": "语义化"
+        },
+        {
+            "id": "introduction",
+            "topicId": "css",
+            "name": "介绍"
+        },
+        {
+            "id": "selectors",
+            "topicId": "css",
+            "name": "选择器"
+        },
+        {
+            "id": "box-model",
+            "topicId": "css",
+            "name": "盒模型"
+        },
+        {
+            "id": "flexbox",
+            "topicId": "css",
+            "name": "Flex 布局"
+        },
+        {
+            "id": "grid",
+            "topicId": "css",
+            "name": "网格布局"
+        },
+        {
+            "id": "introduction",
+            "topicId": "javascript",
+            "name": "介绍"
+        },
+        {
+            "id": "functions",
+            "topicId": "javascript",
+            "name": "函数"
+        },
+        {
+            "id": "objects",
+            "topicId": "javascript",
+            "name": "对象"
+        },
+        {
+            "id": "arrays",
+            "topicId": "javascript",
+            "name": "数组"
+        },
+        {
+            "id": "es6",
+            "topicId": "javascript",
+            "name": "ES6 特性"
+        },
+        {
+            "id": "introduction",
+            "topicId": "vue",
+            "name": "介绍"
+        },
+        {
+            "id": "components",
+            "topicId": "vue",
+            "name": "组件"
+        },
+        {
+            "id": "directives",
+            "topicId": "vue",
+            "name": "指令"
+        },
+        {
+            "id": "routing",
+            "topicId": "vue",
+            "name": "路由"
+        },
+        {
+            "id": "state-management",
+            "topicId": "vue",
+            "name": "状态管理"
+        },
+        {
+            "id": "introduction",
+            "topicId": "cpp",
+            "name": "介绍"
+        },
+        {
+            "id": "basics",
+            "topicId": "cpp",
+            "name": "基础"
+        },
+        {
+            "id": "classes",
+            "topicId": "cpp",
+            "name": "类"
+        },
+        {
+            "id": "inheritance",
+            "topicId": "cpp",
+            "name": "继承"
+        },
+        {
+            "id": "pointers",
+            "topicId": "cpp",
+            "name": "指针"
+        },
+        {
+            "id": "introduction",
+            "topicId": "java",
+            "name": "介绍"
+        },
+        {
+            "id": "oop",
+            "topicId": "java",
+            "name": "面向对象编程"
+        },
+        {
+            "id": "exceptions",
+            "topicId": "java",
+            "name": "异常处理"
+        },
+        {
+            "id": "collections",
+            "topicId": "java",
+            "name": "集合"
+        },
+        {
+            "id": "multithreading",
+            "topicId": "java",
+            "name": "多线程"
+        },
+        {
+            "id": "introduction",
+            "topicId": "ds",
+            "name": "介绍"
+        },
+        {
+            "id": "arrays",
+            "topicId": "ds",
+            "name": "数组"
+        },
+        {
+            "id": "linked-lists",
+            "topicId": "ds",
+            "name": "链表"
+        },
+        {
+            "id": "stacks",
+            "topicId": "ds",
+            "name": "栈"
+        },
+        {
+            "id": "queues",
+            "topicId": "ds",
+            "name": "队列"
+        },
+        {
+            "id": "trees",
+            "topicId": "ds",
+            "name": "树"
+        }
+    ],
     "questions": [
         {
-            "id": 1,
-            "text": "What is the capital of France?",
+            "id": "1",
+            "chapterId": "introduction",
+            "topicId": "html",
+            "text": "HTML 是什么的缩写？",
             "type": "multiple-choice",
             "options": [
-                "Berlin",
-                "London",
-                "Paris",
-                "Madrid"
+                "超文本标记语言",
+                "家庭工具标记语言"
             ],
-            "correctAnswer": "Paris"
+            "correctAnswer": "超文本标记语言"
         },
         {
-            "id": 2,
-            "text": "以下哪个属性是对元素的外边距进行控制?",
-            "type": "multiple-choice",
-            "options": [
-                "margin",
-                "padding",
-                "text-align",
-                "line-height"
-            ],
-            "correctAnswer": "margin"
-        },
-        {
-            "id": 3,
-            "text": "Vue 是一种前端开发框架，用于构建用户界面和单页应用程序。",
+            "id": "2",
+            "chapterId": "introduction",
+            "topicId": "html",
+            "text": "HTML 是一种编程语言。",
             "type": "true-false",
-            "correctAnswer": "true"
+            "correctAnswer": "false"
+        },
+        {
+            "id": "3",
+            "chapterId": "elements",
+            "topicId": "html",
+            "text": "用于创建无序列表的 HTML 标签是？",
+            "type": "multiple-choice",
+            "options": [
+                "<ul>",
+                "<ol>",
+                "<li>"
+            ],
+            "correctAnswer": "<ul>"
+        },
+        {
+            "id": "4",
+            "chapterId": "forms",
+            "topicId": "html",
+            "text": "指定表单提交时处理输入控件的文件 URL 的属性是？",
+            "type": "multiple-choice",
+            "options": [
+                "action",
+                "method",
+                "src"
+            ],
+            "correctAnswer": "action"
+        },
+        {
+            "id": "5",
+            "chapterId": "tables",
+            "topicId": "html",
+            "text": "用于向表格添加标题的元素是？",
+            "type": "multiple-choice",
+            "options": [
+                "<caption>",
+                "<thead>",
+                "<tfoot>"
+            ],
+            "correctAnswer": "<caption>"
+        },
+        {
+            "id": "6",
+            "chapterId": "introduction",
+            "topicId": "css",
+            "text": "CSS 是什么的缩写？",
+            "type": "multiple-choice",
+            "options": [
+                "层叠样式表",
+                "创意样式表"
+            ],
+            "correctAnswer": "层叠样式表"
+        },
+        {
+            "id": "7",
+            "chapterId": "selectors",
+            "topicId": "css",
+            "text": "哪个 CSS 选择器用于选择具有特定类的元素？",
+            "type": "multiple-choice",
+            "options": [
+                ".class",
+                "#id",
+                "&lt;element&gt;"
+            ],
+            "correctAnswer": ".class"
+        },
+        {
+            "id": "8",
+            "chapterId": "box-model",
+            "topicId": "css",
+            "text": "用于改变元素边框区域宽度的属性是？",
+            "type": "multiple-choice",
+            "options": [
+                "border-width",
+                "padding",
+                "margin"
+            ],
+            "correctAnswer": "border-width"
+        },
+        {
+            "id": "9",
+            "chapterId": "flexbox",
+            "topicId": "css",
+            "text": "在 Flexbox 布局中，用于指定项目沿交叉轴对齐方式的属性是？",
+            "type": "multiple-choice",
+            "options": [
+                "justify-content",
+                "align-items",
+                "flex-direction"
+            ],
+            "correctAnswer": "align-items"
+        },
+        {
+            "id": "10",
+            "chapterId": "grid",
+            "topicId": "css",
+            "text": "用于创建网格布局的 CSS 特性是？",
+            "type": "multiple-choice",
+            "options": [
+                "Flexbox",
+                "Grid",
+                "Float"
+            ],
+            "correctAnswer": "Grid"
+        },
+        {
+            "id": "11",
+            "chapterId": "introduction",
+            "topicId": "javascript",
+            "text": "在哪个 HTML 元素中放置 JavaScript 代码？",
+            "type": "multiple-choice",
+            "options": [
+                "<script>",
+                "<javascript>",
+                "<js>"
+            ],
+            "correctAnswer": "<script>"
+        },
+        {
+            "id": "12",
+            "chapterId": "functions",
+            "topicId": "javascript",
+            "text": "在 JavaScript 中用于声明函数的关键字是？",
+            "type": "multiple-choice",
+            "options": [
+                "function",
+                "declare",
+                "func"
+            ],
+            "correctAnswer": "function"
+        },
+        {
+            "id": "13",
+            "chapterId": "objects",
+            "topicId": "javascript",
+            "text": "用于在 JavaScript 中创建对象的语句是？",
+            "type": "multiple-choice",
+            "options": [
+                "var obj = {}",
+                "new Object()",
+                "以上都是"
+            ],
+            "correctAnswer": "以上都是"
+        },
+        {
+            "id": "14",
+            "chapterId": "arrays",
+            "topicId": "javascript",
+            "text": "哪个方法向数组末尾添加一个或多个元素，并返回新数组的长度？",
+            "type": "multiple-choice",
+            "options": [
+                "push()",
+                "concat()",
+                "splice()"
+            ],
+            "correctAnswer": "push()"
+        },
+        {
+            "id": "15",
+            "chapterId": "es6",
+            "topicId": "javascript",
+            "text": "ES6 JavaScript 中 'let' 关键字的作用是什么？",
+            "type": "multiple-choice",
+            "options": [
+                "声明块作用域变量",
+                "声明全局变量",
+                "声明私有变量"
+            ],
+            "correctAnswer": "声明块作用域变量"
+        },
+        {
+            "id": "16",
+            "chapterId": "introduction",
+            "topicId": "vue",
+            "text": "Vue.js 是什么？",
+            "type": "multiple-choice",
+            "options": [
+                "一种 JavaScript 框架",
+                "一种 CSS 预处理器",
+                "一种数据结构"
+            ],
+            "correctAnswer": "一种 JavaScript 框架"
+        },
+        {
+            "id": "17",
+            "chapterId": "components",
+            "topicId": "vue",
+            "text": "在 Vue.js 中，组件是什么？",
+            "type": "multiple-choice",
+            "options": [
+                "可重用的 Vue 实例",
+                "DOM 元素",
+                "JavaScript 函数"
+            ],
+            "correctAnswer": "可重用的 Vue 实例"
+        },
+        {
+            "id": "18",
+            "chapterId": "directives",
+            "topicId": "vue",
+            "text": "Vue.js 中的指令是什么？",
+            "type": "multiple-choice",
+            "options": [
+                "特殊属性",
+                "CSS 类",
+                "JavaScript 函数"
+            ],
+            "correctAnswer": "特殊属性"
+        },
+        {
+            "id": "19",
+            "chapterId": "routing",
+            "topicId": "vue",
+            "text": "在 Vue.js 中，用于实现页面路由的库是？",
+            "type": "multiple-choice",
+            "options": [
+                "Vue Router",
+                "Axios",
+                "Vuex"
+            ],
+            "correctAnswer": "Vue Router"
+        },
+        {
+            "id": "20",
+            "chapterId": "state-management",
+            "topicId": "vue",
+            "text": "Vue.js 中用于管理组件状态的主要工具是？",
+            "type": "multiple-choice",
+            "options": [
+                "Vuex",
+                "Vue Router",
+                "Axios"
+            ],
+            "correctAnswer": "Vuex"
+        },
+        {
+            "id": "21",
+            "chapterId": "introduction",
+            "topicId": "cpp",
+            "text": "C++ 是哪种类型的编程语言？",
+            "type": "multiple-choice",
+            "options": [
+                "编译型",
+                "解释型",
+                "混合型"
+            ],
+            "correctAnswer": "编译型"
+        },
+        {
+            "id": "22",
+            "chapterId": "basics",
+            "topicId": "cpp",
+            "text": "C++ 中的 'cout' 用于什么目的？",
+            "type": "multiple-choice",
+            "options": [
+                "输出到控制台",
+                "定义变量",
+                "读取用户输入"
+            ],
+            "correctAnswer": "输出到控制台"
+        },
+        {
+            "id": "23",
+            "chapterId": "classes",
+            "topicId": "cpp",
+            "text": "在 C++ 中，类是什么？",
+            "type": "multiple-choice",
+            "options": [
+                "用户定义的数据类型",
+                "函数库",
+                "变量"
+            ],
+            "correctAnswer": "用户定义的数据类型"
+        },
+        {
+            "id": "24",
+            "chapterId": "inheritance",
+            "topicId": "cpp",
+            "text": "C++ 中继承的概念是什么意思？",
+            "type": "multiple-choice",
+            "options": [
+                "一个类可以从另一个类派生",
+                "变量复制",
+                "对象创建"
+            ],
+            "correctAnswer": "一个类可以从另一个类派生"
+        },
+        {
+            "id": "25",
+            "chapterId": "pointers",
+            "topicId": "cpp",
+            "text": "在 C++ 中，指针是什么？",
+            "type": "multiple-choice",
+            "options": [
+                "存储变量地址的变量",
+                "字符串",
+                "数组"
+            ],
+            "correctAnswer": "存储变量地址的变量"
+        },
+        {
+            "id": "26",
+            "chapterId": "introduction",
+            "topicId": "java",
+            "text": "Java 是一种什么类型的编程语言？",
+            "type": "multiple-choice",
+            "options": [
+                "面向对象",
+                "过程化",
+                "函数"
+            ],
+            "correctAnswer": "面向对象"
+        },
+        {
+            "id": "27",
+            "chapterId": "introduction",
+            "topicId": "java",
+            "text": "Java 的特点是什么？",
+            "type": "multiple-choice",
+            "options": [
+                "面向对象",
+                "命令式",
+                "函数式"
+            ],
+            "correctAnswer": "面向对象"
+        },
+        {
+            "id": "28",
+            "chapterId": "introduction",
+            "topicId": "java",
+            "text": "Java 程序的入口是哪个函数？",
+            "type": "multiple-choice",
+            "options": [
+                "public static void main(String[] args)",
+                "public void start()",
+                "public static int main()"
+            ],
+            "correctAnswer": "public static void main(String[] args)"
+        },
+        {
+            "id": "29",
+            "chapterId": "oop",
+            "topicId": "java",
+            "text": "在 Java 中，封装是什么意思？",
+            "type": "multiple-choice",
+            "options": [
+                "隐藏对象的实现细节",
+                "将多个类合并成一个类",
+                "限制对类的继承"
+            ],
+            "correctAnswer": "隐藏对象的实现细节"
+        },
+        {
+            "id": "30",
+            "chapterId": "oop",
+            "topicId": "java",
+            "text": "在 Java 中，继承的作用是什么？",
+            "type": "multiple-choice",
+            "options": [
+                "允许一个类派生出子类",
+                "定义常量",
+                "调用父类的私有方法"
+            ],
+            "correctAnswer": "允许一个类派生出子类"
+        },
+        {
+            "id": "31",
+            "chapterId": "exceptions",
+            "topicId": "java",
+            "text": "在 Java 中，异常处理的关键字是？",
+            "type": "multiple-choice",
+            "options": [
+                "try-catch",
+                "if-else",
+                "switch-case"
+            ],
+            "correctAnswer": "try-catch"
+        },
+        {
+            "id": "32",
+            "chapterId": "collections",
+            "topicId": "java",
+            "text": "Java 中用于存储键值对的数据结构是？",
+            "type": "multiple-choice",
+            "options": [
+                "Map",
+                "List",
+                "Set"
+            ],
+            "correctAnswer": "Map"
+        },
+        {
+            "id": "33",
+            "chapterId": "collections",
+            "topicId": "java",
+            "text": "在 Java 中，ArrayList 和 LinkedList 的主要区别是？",
+            "type": "multiple-choice",
+            "options": [
+                "底层数据结构不同",
+                "支持的操作不同",
+                "实现接口不同"
+            ],
+            "correctAnswer": "底层数据结构不同"
+        },
+        {
+            "id": "34",
+            "chapterId": "multithreading",
+            "topicId": "java",
+            "text": "Java 中用于创建新线程的接口是？",
+            "type": "multiple-choice",
+            "options": [
+                "Runnable",
+                "Thread",
+                "Executor"
+            ],
+            "correctAnswer": "Runnable"
+        },
+        {
+            "id": "35",
+            "chapterId": "multithreading",
+            "topicId": "java",
+            "text": "在 Java 中，线程安全的集合类有哪些？",
+            "type": "multiple-choice",
+            "options": [
+                "ConcurrentHashMap",
+                "ArrayList",
+                "HashSet"
+            ],
+            "correctAnswer": "ConcurrentHashMap"
+        },
+        {
+            "id": "36",
+            "chapterId": "introduction",
+            "topicId": "ds",
+            "text": "数据结构是指什么？",
+            "type": "multiple-choice",
+            "options": [
+                "数据的组织、管理和存储方式",
+                "数据库表的结构",
+                "数据的类型"
+            ],
+            "correctAnswer": "数据的组织、管理和存储方式"
+        },
+        {
+            "id": "37",
+            "chapterId": "arrays",
+            "topicId": "ds",
+            "text": "在数据结构中，数组的特点是？",
+            "type": "multiple-choice",
+            "options": [
+                "连续存储空间",
+                "动态增长",
+                "只能存储一种类型数据"
+            ],
+            "correctAnswer": "连续存储空间"
+        },
+        {
+            "id": "38",
+            "chapterId": "linked-lists",
+            "topicId": "ds",
+            "text": "链表中，节点间的关系是通过什么来建立的？",
+            "type": "multiple-choice",
+            "options": [
+                "指针",
+                "索引",
+                "哈希表"
+            ],
+            "correctAnswer": "指针"
+        },
+        {
+            "id": "39",
+            "chapterId": "stacks",
+            "topicId": "ds",
+            "text": "在数据结构中，栈的特点是？",
+            "type": "multiple-choice",
+            "options": [
+                "后进先出",
+                "先进先出",
+                "无序存储"
+            ],
+            "correctAnswer": "后进先出"
+        },
+        {
+            "id": "40",
+            "chapterId": "queues",
+            "topicId": "ds",
+            "text": "队列的特点是？",
+            "type": "multiple-choice",
+            "options": [
+                "先进先出",
+                "后进先出",
+                "随机读取"
+            ],
+            "correctAnswer": "先进先出"
         }
-    ]
+    ],
+      "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "password1",
+      "avatar": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "password2",
+      "avatar": "https://via.placeholder.com/150"
+    }
+  ],
 }

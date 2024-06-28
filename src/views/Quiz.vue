@@ -1,60 +1,88 @@
 <template>
   <div class="quiz-container">
-    <!-- 左侧导航栏 -->
-    <div class="sidebar">
-      <ul>
-        <li v-for="chapter in chapters" :key="chapter.id">
-          <router-link :to="`#${chapter.id}`">{{ chapter.name }}</router-link>
-        </li>
-      </ul>
-    </div>
+    <!-- 左侧边导航栏 -->
+    <Sidebar :topicId="topicId" :chapters="chapters" @chapter-clicked="handleChapterClicked" />
 
-    <!-- 右侧题目显示区域 -->
+    <!-- 右边章节内容与题目 -->
     <div class="main-content">
-      <div v-for="chapter in chapters" :key="chapter.id" id="chapter-{{ chapter.id }}">
-        <h2>{{ chapter.name }}</h2>
-        <div v-for="question in chapter.questions" :key="question.id">
-          <h3>{{ question.text }}</h3>
-          <div v-for="(option, index) in question.options" :key="index">
-            <input
-              type="radio"
-              :id="`question-${question.id}-option-${index}`"
-              :name="`question-${question.id}`"
-              :value="option"
-              v-model="question.userAnswer"
-            />
-            <label :for="`question-${question.id}-option-${index}`">{{ option }}</label>
-          </div>
-        </div>
+      <div v-if="currentChapter">
+        <h2>{{ currentChapter.name }}</h2>
+        <p class="chapter-description">{{ currentChapter.description }}</p>
       </div>
-      <button @click="submitAnswers">提交答案</button>
+      <Question
+        v-for="(question, index) in currentChapterQuestions"
+        :key="question.id"
+        :question="question"
+        :index="index"
+        @answer-changed="updateAnswer"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+import Sidebar from '../components/Sidebar.vue';
+import Question from '../components/Question.vue';
+
 export default {
-  data() {
-    return {
-      chapters: [] // 从 store 中获取的章节数据
-    };
+  name: 'Quiz',
+  components: {
+    Sidebar,
+    Question
+  },
+  computed: {
+    ...mapState(['chapters', 'questions']),
+    topicId() {
+      return this.$route.params.topicId;
+    },
+    chapterId() {
+      return this.$route.params.chapterId;
+    },
+    currentChapter() {
+      return this.chapters.find(
+        chapter => chapter.id === this.chapterId && chapter.topicId === this.topicId
+      );
+    },
+    currentChapterQuestions() {
+      return this.questions.filter(question => question.chapterId === this.chapterId);
+    }
+  },
+  watch: {
+    topicId: 'fetchChaptersAndQuestions',
+    chapterId: 'fetchChapterQuestions'
   },
   methods: {
-    submitAnswers() {
-      // 遍历所有题目，提交用户选择的答案
-      this.chapters.forEach(chapter => {
-        chapter.questions.forEach(question => {
-          // 如果用户有选择答案
-          if (question.userAnswer !== null && question.userAnswer !== undefined) {
-            // 根据实际情况提交答案的逻辑，例如提交到后端或更新状态
-            console.log(`Question ${question.id} Answer: ${question.userAnswer}`);
-            // 这里可以调用 Vuex store 的 action 提交答案
-          }
-        });
-      });
-
-      // 可以根据需要添加逻辑，例如计算得分、跳转页面等
+    ...mapActions(['fetchChapters', 'fetchQuestions']),
+    updateAnswer({ questionId, answer }) {
+      const question = this.questions.find(q => q.id === questionId);
+      if (question) {
+        question.userAnswer = answer;
+      }
+    },
+    async fetchChaptersAndQuestions() {
+      if (this.topicId) {
+        await this.fetchChapters(this.topicId);
+        if (!this.chapterId && this.chapters.length > 0) {
+          const firstChapter = this.chapters[0];
+          this.$router.replace({ name: 'quiz', params: { topicId: this.topicId, chapterId: firstChapter.id } });
+        }
+        if (this.chapterId) {
+          await this.fetchQuestions({ topicId: this.topicId, chapterId: this.chapterId });
+        }
+      }
+    },
+    async fetchChapterQuestions() {
+      if (this.chapterId) {
+        await this.fetchQuestions({ topicId: this.topicId, chapterId: this.chapterId });
+      }
+    },
+    handleChapterClicked(chapterId) {
+      this.$router.push({ name: 'quiz', params: { topicId: this.topicId, chapterId: chapterId } });
     }
+  },
+  async created() {
+    await this.fetchChaptersAndQuestions();
   }
 };
 </script>
@@ -62,39 +90,16 @@ export default {
 <style scoped>
 .quiz-container {
   display: flex;
-  justify-content: space-between;
-}
-
-.sidebar {
-  width: 200px;
-  padding: 20px;
-  background-color: #f0f0f0;
 }
 
 .main-content {
   flex: 1;
   padding: 20px;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
+  overflow-y: auto;
 }
 
 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 button {
